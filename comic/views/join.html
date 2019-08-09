@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>COMIC SHOP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="Shortcut Icon" type="image/x-icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <script type="text/javascript" src="../js/join.js"></script>
+    <script>
+        $(function() {
+            $(".header").load("header.html");
+            $(".footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header"></div>
+    <div class="content">
+        <form id="formjoin">
+            <p><strong>帳號</strong>：<br><input type="text" name="username" id="username" size="35" autocomplete="off"><br>
+                <span id="username_result"></span><br></p>
+            <p><strong>密碼</strong>：<br><input type="password" name="password" size="35" id="password"><br>
+                <span id="password_result"></span><br></p>
+            <p><strong>密碼確認</strong>：<br><input type="password" name="cpassword" size="35" id="cpassword"><br>
+                <span id="cpassword_result"></span><br></p>
+            <p><strong>姓名</strong>：<br><input type="text" name="realname" size="35" id="realname" autocomplete="off"><br>
+                <span id="realname_result"></span><br></p>
+            <p><strong>信箱</strong>：<br><input type="text" name="email" size="35" id="email" autocomplete="off"><br>
+                <span id="email_result"></span><br></p>
+            <button type="button" class="btn btn-default" id="submitExample">加入會員</button>
+            <span id="used_result"></span><span id="join_result"></span>
+        </form>
+    </div>
+    <div class="footer"></div>
+
+    <style type="text/css">
+        body {
+            height: auto;
+            font-size: 18px;
+            font-family: Microsoft JhengHei;
+        }
+        
+        input {
+            line-height: 10px;
+        }
+        
+        .content {
+            padding-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        #username_result {
+            font-size: 14px;
+            color: gray;
+        }
+        
+        #password_result {
+            font-size: 14px;
+            color: gray;
+        }
+        
+        #cpassword_result {
+            font-size: 14px;
+            color: gray;
+        }
+        
+        #realname_result {
+            font-size: 14px;
+            color: gray;
+        }
+        
+        #email_result {
+            font-size: 14px;
+            color: gray;
+        }
+        
+        .title {
+            font-size: 24px;
+            color: rgb(84, 141, 216);
+        }
+        
+        .check {
+            font-size: 24px;
+            color: red;
+            padding-bottom: 3px;
+        }
+        .footer{
+            margin-top: 80px;
+        }
+    </style>
+</body>
+
+</html>

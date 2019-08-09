@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>網站會員系統</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    </script>
+    <script>
+        $(function() {
+            $(".header").load("header.html");
+        });
+    </script>
+
+</head>
+
+<body>
+    <div class="header"></div>
+    <p class="title">會員資料列表 </p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">姓名</th>
+                <th scope="col">帳號</th>
+                <th scope="col">加入時間</th>
+                <th scope="col">上次登入</th>
+                <th scope="col">登入</th>
+            </tr>
+        </thead>
+        {{foreach $arr as $it}}
+        <tbody>
+            <tr>
+                <th scope="row">
+
+                </th>
+                <td>
+                    <p>{{$it.realname}}</p>
+                </td>
+                <td>
+                    <p>{{$it.username}}</p>
+                </td>
+                <td>
+                    <p>{{$it.jointime}}</p>
+                </td>
+                <td>
+                    <p>{{$it.logintime}}</p>
+                </td>
+                <td>
+                    <p>{{$it.loginnum}}</p>
+                </td>
+            </tr>
+        </tbody>
+        {{/foreach}}
+    </table>
+    <hr size="1" />
+    <table width="98%" border="0" align="center" cellpadding="4" cellspacing="0">
+        <div class="footer">
+            總共{{$totals}}筆 共{{$total_pages}}頁&nbsp在第{{$num_pages}}頁&nbsp{{$pageup}}&nbsp{{$pagedown}}
+            <a href="add.php">留言管理</a>
+        </div>
+    </table>
+    <p>&nbsp;</p>
+    </td>
+    <td width="200">
+        <div class="boxtl"></div>
+        <div class="boxtr"></div>
+        <div class="regbox">
+            <p class="heading"><strong>會員系統</strong></p>
+            {{foreach $brr as $it}}
+            <p><strong>{{$it.realname}}</strong>您好。<br> 本次登入的時間為：
+                <br> {{$it.logintime}}
+            </p>
+            <p align="center"><a href="member_adminupdate.php?id={{$it.id}}">修改資料</a> | <a href="?logout=true">登出系統</a></p>
+            {{/foreach}}
+        </div>
+        </div>
+
+        <style type="text/css">
+            body {
+                width: 1280px;
+                margin: 0 auto;
+                height: auto;
+                font-size: 18px;
+                font-family: Microsoft JhengHei;
+            }
+            
+            .content {
+                display: flex;
+                justify-content: space-around;
+                padding-top: 50px;
+            }
+            
+            .msg {
+                color: rgb(251, 18, 10);
+                text-align: center;
+                font-size: 24px;
+            }
+            
+            .title {
+                font-size: 24px;
+                color: rgb(84, 141, 216);
+            }
+            
+            .left {
+                width: 50%;
+                margin-left: 5%;
+            }
+            
+            .right {
+                width: 43%;
+            }
+        </style>
+</body>
+
+</html>

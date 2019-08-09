@@ -1,0 +1,78 @@
+<a href="login.php">登入</a>
+<a href="logout.php">登出系統</a>
+<div class="content">
+    {{foreach $arr as $it}}
+          <div class="main">
+            <div>
+              <a href="#">
+                <img src="../images/{{$it.id}}.jpg" width="340px" height="480px">
+              </a>
+            </div>
+            <div class="down">
+              <div class="price">{{$it.price}}/ <small>卷</small></div>
+              <h1>{{$it.name}}</h1>
+              <ul class="details">
+                <li>{{$it.content}}</li>
+              </ul>
+              <a href="product.php?id={{$it.id}}" class="btn btn-primary btn-lg btn-block buy-now">
+                購買 <span class="glyphicon glyphicon-triangle-right"></span>
+              </a>
+            </div>
+          </div>
+    {{/foreach}}
+    </div>
+  </div>
+  <div class="page">
+      <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link">{{$pageup}}</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link">{{$pagedown}}</a></li>
+          </ul>
+        </nav>總共{{$totals}}筆 共{{$total_pages}}頁&nbsp在第{{$num_page}}頁&nbsp{{$pageup}}&nbsp{{$pagedown}}</div>
+  <div class="footer"></div>
+  <style type="text/css">
+    body {
+      width: 100%;
+      margin: 0 auto;
+      height: auto;
+      font-size: 16px;
+      font-family: Microsoft JhengHei;
+
+    }
+    img {
+      border-radius: 8px;
+    }
+
+    .content{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+.main{
+  margin: 30px;
+  border-style: solid;
+  background-color:#f8f8ff;
+  border-radius: 10px;
+  box-shadow:6px 10px 6px #000;
+}
+.price{
+  text-align: center;
+  color: cornflowerblue;
+  font-size: 32px;
+}
+.down{
+  padding-top: 30px;
+}
+.down h1{
+  padding-left: 15px;
+}
+.details li{
+  list-style-type: square;
+}
+  </style>
+</body>
+
+</html>
